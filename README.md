@@ -41,6 +41,9 @@ Add
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
 to dependencies block in app build gradle
+
+
+upgrade version classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21" 
 ```
 Give an example here
 ```

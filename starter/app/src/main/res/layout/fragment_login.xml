@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.udacity.shoestore.screens.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/parent_padding"
+        tools:context=".screens.login.LoginFragment">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@id/textUsernameLabel"
+            app:layout_constraintLeft_toLeftOf="@id/loginParent"
+            app:layout_constraintRight_toRightOf="@id/loginParent"
+            app:layout_constraintTop_toTopOf="@id/loginParent" />
+
+        <TextView
+            android:id="@+id/textLoginLabel"
+            style="@style/text_style"
+            android:text="@string/welcome_to_shoe_store"
+            app:layout_constraintLeft_toLeftOf="@id/loginParent"
+            app:layout_constraintRight_toRightOf="@id/loginParent"
+            app:layout_constraintTop_toBottomOf="@id/imgLogo"
+            tools:text="Welcome to Shoe store" />
+
+        <TextView
+            android:id="@+id/textUsernameLabel"
+            style="@style/text_style"
+            android:text="@string/email"
+            app:layout_constraintLeft_toLeftOf="@id/loginParent"
+            app:layout_constraintTop_toBottomOf="@id/textLoginLabel"
+            tools:text="User Name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editUserName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/textUsernameLabel"
+            app:layout_constraintTop_toBottomOf="@id/textUsernameLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_your_email"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:textSize="@dimen/font_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textPassWordLabel"
+            style="@style/text_style"
+            android:hint="@string/input_your_password"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="@id/textUsernameLabel"
+            app:layout_constraintTop_toBottomOf="@id/editUserName" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintStart_toStartOf="@id/textUsernameLabel"
+            app:layout_constraintTop_toBottomOf="@id/textPassWordLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/input_your_password"
+                android:inputType="textPassword"
+                android:lines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            style="@style/button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/roboto"
+            android:onClick="@{() -> loginViewModel.doLogin()}"
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="@id/loginParent"
+            app:layout_constraintLeft_toLeftOf="@id/loginParent"
+            app:layout_constraintRight_toRightOf="@id/loginParent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
