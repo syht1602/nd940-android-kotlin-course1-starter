@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.login.LoginFragment">
 
     <data>
 
@@ -11,11 +12,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/loginParent"
+        android:id="@+id/constraintParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/parent_padding"
-        tools:context=".screens.login.LoginFragment">
+        android:padding="@dimen/parent_padding">
 
         <ImageView
             android:id="@+id/imgLogo"
@@ -23,16 +23,16 @@
             android:layout_height="@dimen/logo_height"
             android:src="@drawable/logo"
             app:layout_constraintBottom_toTopOf="@id/textUsernameLabel"
-            app:layout_constraintLeft_toLeftOf="@id/loginParent"
-            app:layout_constraintRight_toRightOf="@id/loginParent"
-            app:layout_constraintTop_toTopOf="@id/loginParent" />
+            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
+            app:layout_constraintRight_toRightOf="@id/constraintParent"
+            app:layout_constraintTop_toTopOf="@id/constraintParent" />
 
         <TextView
             android:id="@+id/textLoginLabel"
             style="@style/text_style"
             android:text="@string/welcome_to_shoe_store"
-            app:layout_constraintLeft_toLeftOf="@id/loginParent"
-            app:layout_constraintRight_toRightOf="@id/loginParent"
+            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
+            app:layout_constraintRight_toRightOf="@id/constraintParent"
             app:layout_constraintTop_toBottomOf="@id/imgLogo"
             tools:text="Welcome to Shoe store" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/textUsernameLabel"
             style="@style/text_style"
             android:text="@string/email"
-            app:layout_constraintLeft_toLeftOf="@id/loginParent"
+            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
             app:layout_constraintTop_toBottomOf="@id/textLoginLabel"
             tools:text="User Name" />
 
@@ -95,9 +95,9 @@
             android:fontFamily="@font/roboto"
             android:onClick="@{() -> loginViewModel.doLogin()}"
             android:text="@string/login"
-            app:layout_constraintBottom_toBottomOf="@id/loginParent"
-            app:layout_constraintLeft_toLeftOf="@id/loginParent"
-            app:layout_constraintRight_toRightOf="@id/loginParent" />
+            app:layout_constraintBottom_toBottomOf="@id/constraintParent"
+            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
+            app:layout_constraintRight_toRightOf="@id/constraintParent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -7,4 +7,5 @@
     <dimen name="text_padding">5dp</dimen>
     <dimen name="parent_padding">30dp</dimen>
     <dimen name="layout_margin_top">10dp</dimen>
+    <dimen name="welcome_margin_top">50dp</dimen>
 </resources>

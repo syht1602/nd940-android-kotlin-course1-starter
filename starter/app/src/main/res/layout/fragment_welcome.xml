@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.welcome.WelcomeFragment">
+
+    <data>
+
+        <variable
+            name="welcomeViewModel"
+            type="com.udacity.shoestore.screens.welcome.WelcomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/parent_padding">
+
+        <TextView
+            android:id="@+id/textWelcome"
+            style="@style/text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/welcome_margin_top"
+            android:text="@string/hi_name_of_user"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textName"
+            style="@style/text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:text="@string/welcome_to_shoe_store"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textWelcome" />
+
+        <Button
+            style="@style/button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:backgroundTint="@null"
+            android:fontFamily="@font/roboto"
+            android:onClick="@{() -> welcomeViewModel.doNext()}"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="@id/constraintParent"
+            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
+            app:layout_constraintRight_toRightOf="@id/constraintParent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
