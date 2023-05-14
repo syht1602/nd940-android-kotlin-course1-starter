@@ -18,21 +18,22 @@
         android:padding="@dimen/parent_padding">
 
         <ImageView
+            android:contentDescription="@string/shoe_logo"
             android:id="@+id/imgLogo"
             android:layout_width="@dimen/logo_width"
             android:layout_height="@dimen/logo_height"
             android:src="@drawable/logo"
             app:layout_constraintBottom_toTopOf="@id/textUsernameLabel"
-            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
-            app:layout_constraintRight_toRightOf="@id/constraintParent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/constraintParent" />
 
         <TextView
             android:id="@+id/textLoginLabel"
             style="@style/text_style"
-            android:text="@string/welcome_to_shoe_store"
-            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
-            app:layout_constraintRight_toRightOf="@id/constraintParent"
+            android:text="@string/login_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgLogo"
             tools:text="Welcome to Shoe store" />
 
@@ -40,7 +41,7 @@
             android:id="@+id/textUsernameLabel"
             style="@style/text_style"
             android:text="@string/email"
-            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textLoginLabel"
             tools:text="User Name" />
 
@@ -49,7 +50,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/textUsernameLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textUsernameLabel">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -58,6 +60,8 @@
                 android:hint="@string/input_your_email"
                 android:inputType="textEmailAddress"
                 android:lines="1"
+                android:text="@={loginViewModel.email}"
+                android:afterTextChanged="@{(text) -> loginViewModel.onEmailChanged(text)}"
                 android:textSize="@dimen/font_size" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/font_size"
-            app:layout_constraintStart_toStartOf="@id/textUsernameLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textPassWordLabel">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -83,21 +88,23 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/input_your_password"
                 android:inputType="textPassword"
-                android:lines="1" />
+                android:lines="1"
+                android:text="@={loginViewModel.password}"
+                android:afterTextChanged="@{ (text) -> loginViewModel.onPasswordChanged(text)}"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/buttonLogin"
             style="@style/button_style"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_margin_top"
             android:backgroundTint="@null"
             android:fontFamily="@font/roboto"
             android:onClick="@{() -> loginViewModel.doLogin()}"
             android:text="@string/login"
-            app:layout_constraintBottom_toBottomOf="@id/constraintParent"
-            app:layout_constraintLeft_toLeftOf="@id/constraintParent"
-            app:layout_constraintRight_toRightOf="@id/constraintParent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

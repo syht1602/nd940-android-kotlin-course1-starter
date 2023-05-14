@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="welcomeViewModel"
-            type="com.udacity.shoestore.screens.welcome.WelcomeViewModel" />
+            name="instructionViewModel"
+            type="com.udacity.shoestore.screens.instruction.InstructionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +46,8 @@
             android:layout_marginTop="@dimen/layout_margin_top"
             android:backgroundTint="@null"
             android:fontFamily="@font/roboto"
-            android:onClick="@{() -> welcomeViewModel.doNext()}"
+            android:maxWidth="@dimen/button_width"
+            android:onClick="@{() -> instructionViewModel.doNext()}"
             android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="@id/constraintParent"
             app:layout_constraintLeft_toLeftOf="@id/constraintParent"

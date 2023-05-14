@@ -5,8 +5,39 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="welcome_to_shoe_store">Welcome to Shoe store</string>
-    <string name="hi_name_of_user">Hi %s</string>
-    <string name="instruction">Instruction</string>
+    <string name="login_welcome">Welcome to Shoe store</string>
+    <string name="welcome_to_shoe_store">This is the simple application for you to list of the shoe and create the new shoe add to your list</string>
+    <string name="hi_name_of_user">Hi User</string>
+    <string name="instruction">. Login to the application with email = email and password = password\n\n
+
+. You will be navigate to the list of shoe screen\n\n
+
+. If you want to create a new shoe and add to the list, click on the add floating button\n\n
+
+. You have to fill all of the * field for saving the shoe detail.\n\n
+
+. Click save when you want to add a new shoe or cancel to go back to list of shoe screen</string>
     <string name="next">Next</string>
+    <string name="logout">Logout</string>
+
+    <string name="instruction_screen_label">Instruction</string>
+    <string name="shoe_list_screen_label">Shoe List</string>
+    <string name="shoe_detail_screen_label">Shoe Detail</string>
+    <string name="login_screen_label">Login</string>
+    <string name="welcome_screen_label">Welcome</string>
+
+    <string name="shoe_name_label">Shoe Name *</string>
+    <string name="shoe_company_label">Shoe Company *</string>
+    <string name="shoe_size_label">Shoe Size *</string>
+    <string name="shoe_description_label">Shoe Description *</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="add_new_shoe">Add new shoe</string>
+    <string name="fragment_container">Fragment Container</string>
+    <string name="shoe_logo">Shoe Logo</string>
+    <string name="company_hint">Input your company</string>
+    <string name="hint_shoe_description">Input shoe description</string>
+    <string name="hint_shoe_name">Input shoe name</string>
+    <string name="hint_shoe_size">Input shoe size</string>
+    <string name="shoe_image">Shoe Image</string>
 </resources>

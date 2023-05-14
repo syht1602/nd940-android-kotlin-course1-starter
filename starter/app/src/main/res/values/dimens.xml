@@ -5,7 +5,12 @@
     <dimen name="logo_margin_top">50dp</dimen>
     <dimen name="font_size">20sp</dimen>
     <dimen name="text_padding">5dp</dimen>
+    <dimen name="shoe_item_padding">10dp</dimen>
     <dimen name="parent_padding">30dp</dimen>
     <dimen name="layout_margin_top">10dp</dimen>
+    <dimen name="shoe_detail_margin_left">10dp</dimen>
     <dimen name="welcome_margin_top">50dp</dimen>
+    <dimen name="shoe_place_holder">100dp</dimen>
+    <dimen name="button_width">320dp</dimen>
+    <dimen name="edit_text_height">48dp</dimen>
 </resources>

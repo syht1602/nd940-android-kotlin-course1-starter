@@ -5,16 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class WelcomeViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
-    private val _isNext = MutableLiveData<Boolean>()
-    val isNext: LiveData<Boolean>
-        get() = _isNext
+    private val _isNextButtonClick = MutableLiveData<Boolean>()
+    val isNextButtonClick: LiveData<Boolean>
+        get() = _isNextButtonClick
 
     fun doNext() {
-        _isNext.value = true
+        _isNextButtonClick.value = true
     }
 
-    fun doNextCompleted() {
-        _isNext.value = false
+    fun resetButtonState() {
+        _isNextButtonClick.value = false
     }
 }

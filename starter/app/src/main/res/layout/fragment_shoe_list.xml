@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="shoeListViewModel"
+            type="com.udacity.shoestore.screens.shoe_list.ShoeListViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".screens.shoe_list.ShoeListFragment">
+
+        <LinearLayout
+            android:id="@+id/lnlShoeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

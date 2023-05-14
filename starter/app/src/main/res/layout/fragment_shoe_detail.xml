@@ -1,0 +1,138 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="shoeDetailViewModel"
+            type="com.udacity.shoestore.screens.shoe_detail.ShoeDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/parent_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_name_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editShoeName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_shoe_name"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:text="@={shoeDetailViewModel.shoeName}"
+                    android:textSize="@dimen/font_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_company_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editShoeCompany"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/company_hint"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:text="@={shoeDetailViewModel.shoeCompany}"
+                    android:textSize="@dimen/font_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_size_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editShoeSize"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_shoe_size"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:text="@={shoeDetailViewModel.shoeSize}"
+                    android:textSize="@dimen/font_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shoe_description_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editShoeDescription"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_shoe_description"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:text="@={shoeDetailViewModel.shoeDescription}"
+                    android:textSize="@dimen/font_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_margin_top"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="@{() -> shoeDetailViewModel.onCancel()}"
+                    android:text="@string/cancel" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    style="@style/button_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/shoe_detail_margin_left"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/roboto"
+                    android:onClick="@{() -> shoeDetailViewModel.onSave()}"
+                    android:text="@string/save" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
