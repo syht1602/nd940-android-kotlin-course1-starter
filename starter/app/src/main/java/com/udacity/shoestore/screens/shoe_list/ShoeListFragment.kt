@@ -53,16 +53,20 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun updateShoeList(shoeList: List<Shoe>) {
-        binding.lnlShoeList.removeAllViews()
-        for (shoe in shoeList) {
-            val shoeItem = LayoutInflater.from(binding.lnlShoeList.context)
-                .inflate(R.layout.shoe_item, binding.lnlShoeList, false)
-            shoeItem.findViewById<TextView>(R.id.shoe_image)
-            shoeItem.findViewById<TextView>(R.id.shoe_name).text = shoe.name
-            shoeItem.findViewById<TextView>(R.id.shoe_company).text = shoe.company
-            shoeItem.findViewById<TextView>(R.id.shoe_size).text = shoe.size.toString()
-            shoeItem.findViewById<TextView>(R.id.shoe_description).text = shoe.description
-            binding.lnlShoeList.addView(shoeItem)
+        binding.lnlShoeList.apply {
+            removeAllViews()
+            for (shoe in shoeList) {
+                addView(
+                    LayoutInflater.from(binding.lnlShoeList.context)
+                        .inflate(R.layout.shoe_item, binding.lnlShoeList, false).apply {
+                            findViewById<TextView>(R.id.shoe_image)
+                            findViewById<TextView>(R.id.shoe_name).text = shoe.name
+                            findViewById<TextView>(R.id.shoe_company).text = shoe.company
+                            findViewById<TextView>(R.id.shoe_size).text = shoe.size.toString()
+                            findViewById<TextView>(R.id.shoe_description).text = shoe.description
+                        }
+                )
+            }
         }
     }
 

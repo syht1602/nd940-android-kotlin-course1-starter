@@ -40,4 +40,5 @@
     <string name="hint_shoe_name">Input shoe name</string>
     <string name="hint_shoe_size">Input shoe size</string>
     <string name="shoe_image">Shoe Image</string>
+    <string name="nav_host_fragment">NavHostFragment</string>
 </resources>

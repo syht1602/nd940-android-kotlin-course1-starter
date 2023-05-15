@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.udacity.shoestore.databinding.ActivityMainBinding
@@ -28,7 +29,9 @@ class MainActivity : AppCompatActivity() {
         Timber.i("MainActivity created !")
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
-        navController = this.findNavController(R.id.nav_host_fragment)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
         val topLevelDestinations = setOf(R.id.shoeListFragment, R.id.loginFragment)
         appBarConfiguration = AppBarConfiguration.Builder(topLevelDestinations).build()
         val toolbar = binding.toolbar
@@ -36,6 +39,15 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.mainActivityViewModel = viewModel
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.shoeListFragment) {
+                binding.addFab.show()
+            } else {
+                binding.addFab.hide()
+            }
+        }
+
         viewModel.isFabClick.observe(this) {
             if (it) {
                 Timber.i("Fab clicked !")
@@ -45,14 +57,6 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
                 }
                 viewModel.onFabClickComplete()
-            }
-        }
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.shoeListFragment) {
-                binding.addFab.show()
-            } else {
-                binding.addFab.hide()
             }
         }
 
